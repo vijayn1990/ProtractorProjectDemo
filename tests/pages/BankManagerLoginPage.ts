@@ -12,4 +12,16 @@ class BankManagerLoginPage extends BasePage {
         this.openAccountBtn = page.locator('//button[.="Open Account"]');
         this.listCustomersTab = page.locator('//button[.="Customers"]');
     }
+
+    async launchAddCustomerPage() {
+        await this.b_clickElement(this.addCustomerBtn);
+    }
+
+    async launchOpenAccountPage() {
+        await this.b_clickElement(this.openAccountBtn);
+    }
+
+    async launchListCustomersPage() {
+        await this.b_clickElement(this.listCustomersTab);
+    }
 }
