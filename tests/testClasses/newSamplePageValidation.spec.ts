@@ -2,6 +2,8 @@ import {test, expect} from '@playwright/test';
 
 test("registration form validation", async ({page})=>{
 
+    //await page.setViewportSize({ width: 1920, height: 1080 });
+
     await page.goto("https://www.way2automation.com/angularjs-protractor/banking/registrationform.html");
 
     await page.locator('#firstName').fill("Robert");
@@ -17,6 +19,13 @@ test("registration form validation", async ({page})=>{
 
     await page.getByText("Traveling").check();
 
+    await page.locator('#gender').selectOption({label:'Male'});
+
+    await page.locator('#about').fill("This is a sample text to demonstrate the text area");
+
+    await page.getByRole('button', {name: 'Register'}).click();
+
     await page.waitForTimeout(5000);
+
 
 });
